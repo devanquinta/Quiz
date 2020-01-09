@@ -2,12 +2,15 @@ var $total = -1
 var pontos = -1
 var correta = 0;
 var errada = 0;
-var mail = "";
+var usuario = "";
 var cont = 1;
 var flag = 1;
-var perguntasTotal = "false"
-var a, b, c, d, e, f, g, h, i, j = "false"
-var pontos = 0
+var perguntasTotal = '';
+var totalCertas = "";
+var totalErradas = "";
+var ac = "";  bc = ""; cc = ""; dc = ""; ec = ""; fc = ""; gc = "";  hc = "";  ic = ""; jc = "";
+var ae = "";  be = ""; ce = "";  de = ""; ee = "";  fe = "";  ge = "";  he = ""; ie = ""; je = "";
+var pontos = 0;
 /************************************************ */
 console.log($("[id*='ctl00_hnlPerfil']", window.parent.document).html());
 var user = $("[id*='ctl00_hnlPerfil']", window.parent.document).html();
@@ -70,32 +73,29 @@ $(document).ready(function () {
 				createjs.Sound.registerSound("bonus.mp3", soundID);
 			}
 			/*loadSound();*/
-
 			function playSound() {
 				createjs.Sound.play(soundID);
 			}
 			/*playSound();*/
 			var certa = correta - 1;
 			if (correta > certa && cont == 1) {
-				a = " Acertou a 1° ";
+				ac = '1, ';
 				pontos += 10
 				document.getElementById("pontos").style.display = 'block';
 				document.getElementById("pontos").innerHTML = "Você ganhou " + pontos + " pontos!"
 				playSound();
 				alert("Você ganhou " + pontos + " pontos!")
-
 			}
 			if (correta > certa && cont == 2) {
-				b = " Acertou a 2° ";
+				bc = '2, ';
 				pontos += 10
 				document.getElementById("pontos1").style.display = 'block';
 				document.getElementById("pontos1").innerHTML = "Você ganhou " + pontos + " pontos!"
 				playSound();
 				alert("Você ganhou " + pontos + " pontos!")
-
 			}
 			if (correta > certa && cont == 3) {
-				c = " Acertou a 3° ";
+				cc = '3, ';
 				pontos += 10
 				document.getElementById("pontos2").style.display = 'block';
 				document.getElementById("pontos2").innerHTML = "Você ganhou " + pontos + " pontos!"
@@ -103,7 +103,7 @@ $(document).ready(function () {
 				alert("Você ganhou " + pontos + " pontos!")
 			}
 			if (correta > certa && cont == 4) {
-				d = " Acertou a 4° ";
+				dc = '4, ';
 				pontos += 10
 				document.getElementById("pontos3").style.display = 'block';
 				document.getElementById("pontos3").innerHTML = "Você ganhou " + pontos + " pontos!"
@@ -111,7 +111,7 @@ $(document).ready(function () {
 				alert("Você ganhou " + pontos + " pontos!")
 			}
 			if (correta > certa && cont == 5) {
-				e = " Acertou a 5° ";
+				ec = '5, ';
 				pontos += 10
 				document.getElementById("pontos4").style.display = 'block';
 				document.getElementById("pontos4").innerHTML = "Você ganhou " + pontos + " pontos!"
@@ -119,7 +119,7 @@ $(document).ready(function () {
 				alert("Você ganhou " + pontos + " pontos!")
 			}
 			if (correta > certa && cont == 6) {
-				f = " Acertou a 6° ";
+				fc = '6, ';
 				pontos += 10
 				document.getElementById("pontos5").style.display = 'block';
 				document.getElementById("pontos5").innerHTML = "Você ganhou " + pontos + " pontos!"
@@ -127,7 +127,7 @@ $(document).ready(function () {
 				alert("Você ganhou " + pontos + " pontos!")
 			}
 			if (correta > certa && cont == 7) {
-				g = " Acertou a 7° ";
+				gc = '7, ';
 				pontos += 10
 				document.getElementById("pontos6").style.display = 'block';
 				document.getElementById("pontos6").innerHTML = "Você ganhou " + pontos + " pontos!"
@@ -135,7 +135,7 @@ $(document).ready(function () {
 				alert("Você ganhou " + pontos + " pontos!")
 			}
 			if (correta > certa && cont == 8) {
-				h = " Acertou a 8° ";
+				hc = '8, ';
 				pontos += 10
 				document.getElementById("pontos7").style.display = 'block';
 				document.getElementById("pontos7").innerHTML = "Você ganhou " + pontos + " pontos!"
@@ -143,7 +143,7 @@ $(document).ready(function () {
 				alert("Você ganhou " + pontos + " pontos!")
 			}
 			if (correta > certa && cont == 9) {
-				i = " Acertou a 9° ";
+				ic = '9, ';
 				pontos += 10
 				document.getElementById("pontos8").style.display = 'block';
 				document.getElementById("pontos8").innerHTML = "Você ganhou " + pontos + " pontos!"
@@ -151,13 +151,16 @@ $(document).ready(function () {
 				alert("Você ganhou " + pontos + " pontos!")
 			}
 			if (correta > certa && cont == 10) {
-				j = " Acertou a 10° ";
+				jc = ' 10';
 				pontos += 10
 				document.getElementById("pontos9").style.display = 'block';
 				document.getElementById("pontos9").innerHTML = "Você ganhou " + pontos + " pontos!"
 				playSound();
 				alert("Você ganhou " + pontos + " pontos!")
 			}// final do if 
+
+				totalCertas = ac + "" + bc + "" + cc + "" + dc + "" + ec + "" + fc + "" + gc + "" + hc + "" + ic + "" + jc + "";
+
 			/********************************************************************************** */
 		} else {
 			//add .wrongAnswer class
@@ -178,38 +181,38 @@ $(document).ready(function () {
 			errada += 1;
 			var erro = errada - 1;
 			if (erro < errada && flag == 1) {
-				a = " Errou a 1° "
+				ae = " 1, "
 			}
 			if (erro < errada && flag == 2) {
-				b = " Errou a 2° "
+				be = " 2, "
 			}
 			if (erro < errada && flag == 3) {
-				c = " Errou a 3° "
+				ce = " 3, "
 			}
 			if (erro < errada && flag == 4) {
-				d = " Errou a 4° "
+				de = " 4, "
 			}
 			if (erro < errada && flag == 5) {
-				e = " Errou a 5° "
+				ee= " 5, "
 			}
 			if (erro < errada && flag == 6) {
-				f = " Errou a 6° "
+				fe = " 6, "
 			}
 			if (erro < errada && flag == 7) {
-				g = " Errou a 7° "
+				ge = " 7, "
 			}
 			if (erro < errada && flag == 8) {
-				h = " Errou a 8° "
+				he = " 8, "
 			}
 			if (erro < errada && flag == 9) {
-				i = " Errou a 9° "
+				ie = " 9, "
 			}
 			if (erro < errada && flag == 10) {
-				j = " Errou a 10° "
+				je = "10"
 				
 			}
-
 		};// Final do else
+		totalErradas = ae + "" + be + "" + ce + "" + de + "" + ee + "" + fe + "" + ge + "" + he + "" + ie + "" + je + "";
 	});//final da função perguntas certas e erradas
 
 	//print Results
@@ -266,24 +269,25 @@ $(document).ready(function () {
 			scrollTop: $(document).height() - $height
 		},
 			15000);*/
-	
+
+
 		function email() {
-			perguntasTotal = a + "-" + b + "-" + c + "-" + d + "-" + e + "-" + f + "-" + g + "-" + h + "-" + i + "-" + j + "";
-			perguntasTotal;
-			pontos = parseInt($totalScore);
-			mail = " Usuário " +user+ "";
-			/*" acertou  " + correta + " pergunta(s), " + "e  errou  " +errada+ " pergunta(s)" + "- Total de pontos = " + pontos + " !" + "- Total de perguntas certas e erradas são: " + perguntasTotal;*/
+			/*perguntasTotal = a + "-" + b + "-" + c + "-" + d + "-" + e + "-" + f + "-" + g + "-" + h + "-" + i + "-" + j + "";*/
+			pontos = parseInt($totalScore) * 10;
+			usuario = "" +user+ "";
 		}//final da função email 
 		email();
 		var templateParams = {
-			"user": user,
+			"user": usuario,
 			"errada": errada,
 			"certa": correta,
-			"mail": mail,
+			"pontos": pontos,
+			"TotalCertas": totalCertas,
+			"TotalErradas": totalErradas
 		};
 		emailjs.send('gmail', 'vander', templateParams)
 			.then(function (response) {
-				alert('SUCCESS!', response.status, response.text);
+				alert('Concluído!', response.status, response.text);
 			}, function (error) {
 				console.log('FAILED...', error);
 		});

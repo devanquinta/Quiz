@@ -87,7 +87,6 @@ ul{
 	background: #fefefe;
 	height: 30px;
 }
-
 #bravo, #sorry{/*Também é sobre as respostas - conteúdo */
 	width: 100%;
 	height: 300px;
@@ -210,7 +209,7 @@ input.hide:checked ~ div.content {
   border: #fff solid 1px;
 }
 .qst{ /* Pergunta */
-  width: 50%;
+  width: 80%;
 	margin-top: 13%;
 	margin-left: 14%;
 	text-align:inherit;
