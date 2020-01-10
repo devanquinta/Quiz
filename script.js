@@ -12,8 +12,9 @@ var totalErradas = "0";
 var desc = "0";
 var ac = ""; bc = ""; cc = ""; dc = ""; ec = ""; fc = ""; gc = ""; hc = ""; ic = ""; jc = "";
 var ae = ""; be = ""; ce = ""; de = ""; ee = ""; fe = ""; ge = ""; he = ""; ie = ""; je = "";
-var desca = ""; descb = ""; descc = ""; descd = ""; desce = ""; descf = ""; descg = ""; desch = ""; desci = ""; descj = "";
-var teste = "";
+var descj = "";
+var desca = ""; descb = ""; descc = ""; descd = ""; desce = ""; descf = ""; descg = ""; desch = ""; desci = "";
+
 
 /************************************************ */
 console.log($("[id*='ctl00_hnlPerfil']", window.parent.document).html());
@@ -163,7 +164,7 @@ $(document).ready(function () {
 				alert("Você ganhou " + pontos + " pontos!")
 			}// final do if 
 
-		
+
 
 
 			/********************************************************************************** */
@@ -253,15 +254,18 @@ $(document).ready(function () {
 				$('#pag9').on('click', '#n10', function () {
 					descj = je;
 					alert(descj);
+					setTimeout(function () {
+						descj = je;
+					}, 1000);
 				});
-
 			}
 		};// Final do else
-	
-	
+
+		desc = desca + "" + descb + "" + descc + "" + descd + "" + desce + "" + descf + "" + descg + "" + desch + "" + desci + "" + descj + "";
+		alert("desconhecida" + desc);
 	});//final da função perguntas certas e erradas
-	
-	
+
+
 
 	//print Results
 	function printResult() {
@@ -323,14 +327,15 @@ $(document).ready(function () {
 			/*perguntasTotal = a + "-" + b + "-" + c + "-" + d + "-" + e + "-" + f + "-" + g + "-" + h + "-" + i + "-" + j + "";*/
 			totalCertas = ac + "" + bc + "" + cc + "" + dc + "" + ec + "" + fc + "" + gc + "" + hc + "" + ic + "" + jc + "";
 			totalErradas = ae + "" + be + "" + ce + "" + de + "" + ee + "" + fe + "" + ge + "" + he + "" + ie + "" + je + "";
-			desc = desca + descb + descc + descd + desce + descf + descg + desch + desci + descj + "" ;
 			pontos = parseInt($totalScore) * 10;
 			usuario = "" + user + "";
 		}//final da função email 
 		email();
+		desc = desca + descb + descc + descd + desce + descf + descg + desch + desci + descj + "";
+		alert("ultimo " + desc + "" + descj)
 		var templateParams = {
 			"user": usuario,
-		  "TotalErrada": errada,
+			"TotalErrada": errada,
 			"TotalCertas": correta,
 			"Pontos": pontos,
 			"Certas": totalCertas,
