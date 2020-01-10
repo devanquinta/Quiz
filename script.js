@@ -5,12 +5,16 @@ var errada = 0;
 var usuario = "";
 var cont = 1;
 var flag = 1;
-var perguntasTotal = '';
-var totalCertas = "";
-var totalErradas = "";
-var ac = "";  bc = ""; cc = ""; dc = ""; ec = ""; fc = ""; gc = "";  hc = "";  ic = ""; jc = "";
-var ae = "";  be = ""; ce = "";  de = ""; ee = "";  fe = "";  ge = "";  he = ""; ie = ""; je = "";
 var pontos = 0;
+var perguntasTotal = '0';
+var totalCertas = "0";
+var totalErradas = "0";
+var desc = "0";
+var ac = ""; bc = ""; cc = ""; dc = ""; ec = ""; fc = ""; gc = ""; hc = ""; ic = ""; jc = "";
+var ae = ""; be = ""; ce = ""; de = ""; ee = ""; fe = ""; ge = ""; he = ""; ie = ""; je = "";
+var desca = ""; descb = ""; descc = ""; descd = ""; desce = ""; descf = ""; descg = ""; desch = ""; desci = ""; descj = "";
+var teste = "";
+
 /************************************************ */
 console.log($("[id*='ctl00_hnlPerfil']", window.parent.document).html());
 var user = $("[id*='ctl00_hnlPerfil']", window.parent.document).html();
@@ -159,7 +163,8 @@ $(document).ready(function () {
 				alert("Você ganhou " + pontos + " pontos!")
 			}// final do if 
 
-				totalCertas = ac + "" + bc + "" + cc + "" + dc + "" + ec + "" + fc + "" + gc + "" + hc + "" + ic + "" + jc + "";
+		
+
 
 			/********************************************************************************** */
 		} else {
@@ -181,39 +186,82 @@ $(document).ready(function () {
 			errada += 1;
 			var erro = errada - 1;
 			if (erro < errada && flag == 1) {
-				ae = " 1, "
+				ae = " 1, ";
+				$('#pag0').on('click', '#n1', function () { /* FUNCIONA COM CLASSE TAMBÉM */
+					desca = ae;
+					alert(desca);
+				});
 			}
 			if (erro < errada && flag == 2) {
-				be = " 2, "
+				be = " 2, ";
+				$('#pag1').on('click', '#n2', function () {
+					descb = be;
+					alert(descb);
+				});
 			}
 			if (erro < errada && flag == 3) {
-				ce = " 3, "
+				ce = " 3, ";
+				$('#pag2').on('click', '#n3', function () {
+					descc = ce;
+					alert(descc);
+				});
 			}
 			if (erro < errada && flag == 4) {
-				de = " 4, "
+				de = " 4, ";
+				$('#pag3').on('click', '#n4', function () {
+					descd = de;
+					alert(descd);
+				});
 			}
 			if (erro < errada && flag == 5) {
-				ee= " 5, "
+				ee = " 5, ";
+				$('#pag4').on('click', '#n5', function () {
+					desce = ee;
+					alert(desce);
+				});
 			}
 			if (erro < errada && flag == 6) {
-				fe = " 6, "
+				fe = " 6, ";
+				$('#pag5').on('click', '#n6', function () {
+					descf = fe;
+					alert(descf);
+				});
 			}
 			if (erro < errada && flag == 7) {
-				ge = " 7, "
+				ge = " 7, ";
+				$('#pag6').on('click', '#n7', function () {
+					descg = ge;
+					alert(descg);
+				});
 			}
 			if (erro < errada && flag == 8) {
-				he = " 8, "
+				he = " 8, ";
+				$('#pag7').on('click', '#n8', function () {
+					desch = he;
+					alert(desch);
+				});
 			}
 			if (erro < errada && flag == 9) {
-				ie = " 9, "
+				ie = " 9, ";
+				$('#pag8').on('click', '#n9', function () {
+					desci = ie;
+					alert(desci + errada);
+				});
 			}
 			if (erro < errada && flag == 10) {
-				je = "10"
-				
+				je = "10";
+				$('#pag9').on('click', '#n10', function () {
+					descj = je;
+					alert(descj);
+				});
+
 			}
 		};// Final do else
-		totalErradas = ae + "" + be + "" + ce + "" + de + "" + ee + "" + fe + "" + ge + "" + he + "" + ie + "" + je + "";
+	
+	
 	});//final da função perguntas certas e erradas
+	
+	
 
 	//print Results
 	function printResult() {
@@ -252,11 +300,11 @@ $(document).ready(function () {
 		setTimeout(function () {
 			document.getElementById('pag9').style.display = 'none';
 		}, 4000);
-	/************************************ */
+		/************************************ */
 		setTimeout(function () {
 			document.getElementById('final').style.display = 'block';
 		}, 1000);
-});
+	});
 
 	$('.absolute').last().click(function () {
 		//prevent further clicks on this
@@ -273,24 +321,28 @@ $(document).ready(function () {
 
 		function email() {
 			/*perguntasTotal = a + "-" + b + "-" + c + "-" + d + "-" + e + "-" + f + "-" + g + "-" + h + "-" + i + "-" + j + "";*/
+			totalCertas = ac + "" + bc + "" + cc + "" + dc + "" + ec + "" + fc + "" + gc + "" + hc + "" + ic + "" + jc + "";
+			totalErradas = ae + "" + be + "" + ce + "" + de + "" + ee + "" + fe + "" + ge + "" + he + "" + ie + "" + je + "";
+			desc = desca + descb + descc + descd + desce + descf + descg + desch + desci + descj + "" ;
 			pontos = parseInt($totalScore) * 10;
-			usuario = "" +user+ "";
+			usuario = "" + user + "";
 		}//final da função email 
 		email();
 		var templateParams = {
 			"user": usuario,
-			"errada": errada,
-			"certa": correta,
-			"pontos": pontos,
-			"TotalCertas": totalCertas,
-			"TotalErradas": totalErradas
+		  "TotalErrada": errada,
+			"TotalCertas": correta,
+			"Pontos": pontos,
+			"Certas": totalCertas,
+			"Erradas": totalErradas,
+			"Desconhecidas": desc
 		};
 		emailjs.send('gmail', 'vander', templateParams)
 			.then(function (response) {
 				alert('Concluído!', response.status, response.text);
 			}, function (error) {
 				console.log('FAILED...', error);
-		});
+			});
 	});// fim da função click
 }); //end dom ready - fim do dom 
 
