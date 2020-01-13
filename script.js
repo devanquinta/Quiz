@@ -16,6 +16,9 @@ var descj = "";
 var desca = ""; descb = ""; descc = ""; descd = ""; desce = ""; descf = ""; descg = ""; desch = ""; desci = "";
 
 
+/* PARA ACERTAR O BUG DO BOTÃO É SÓ COLOCAR TUDO EM BUTTON
+
+
 /************************************************ */
 console.log($("[id*='ctl00_hnlPerfil']", window.parent.document).html());
 var user = $("[id*='ctl00_hnlPerfil']", window.parent.document).html();
