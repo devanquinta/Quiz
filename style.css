@@ -303,5 +303,7 @@ input.hide:checked ~ div.content {
 	padding-top: 35px;
 	position: fixed;
 	background: #fff;
+	color: rgb(14, 14, 153);
+	font-size: larger;
 }
 

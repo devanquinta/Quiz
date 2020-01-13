@@ -2,14 +2,14 @@ var $total = -1
 var pontos = -1
 var correta = 0;
 var errada = 0;
-var usuario = "";
+var usuario = "0";
 var cont = 1;
 var flag = 1;
 var pontos = 0;
-var perguntasTotal = '0';
+var perguntasTotal = "0";
 var totalCertas = "0";
 var totalErradas = "0";
-var desc = "0";
+var desc = '0';
 var ac = ""; bc = ""; cc = ""; dc = ""; ec = ""; fc = ""; gc = ""; hc = ""; ic = ""; jc = "";
 var ae = ""; be = ""; ce = ""; de = ""; ee = ""; fe = ""; ge = ""; he = ""; ie = ""; je = "";
 var descj = "";
@@ -34,9 +34,11 @@ $(document).ready(function () {
 		document.getElementById('pagA').style.display = 'none';
 		document.getElementById('pag0').style.display = 'block';
 	});
+
 	$('.absolute').click(function () {
 		$("body").css({ "position": "absolute" });
 	});
+
 	//get total of questions
 	var $questionNumber = $('h2').length;
 	console.log($questionNumber);
@@ -164,7 +166,17 @@ $(document).ready(function () {
 				alert("Você ganhou " + pontos + " pontos!")
 			}// final do if 
 
-
+			setTimeout(function () {
+				var div = $(".pontos");
+				div.animate({ height: '105px', opacity: '0.4' }, "slow");
+				div.animate({ width: '175px', opacity: '0.8' }, "slow");
+				div.animate({ height: '95px', opacity: '0.4' }, "slow");
+				div.animate({ width: '160px', opacity: '0.8' }, "slow");
+				$("body").css('opacity', '0.5');
+			}, 1200);
+			setTimeout(function () {
+				$("body").css('opacity', '0.8');
+			}, 3500);
 
 
 			/********************************************************************************** */
@@ -183,7 +195,6 @@ $(document).ready(function () {
 			$toShowFalse.show();
 			//locate correct answer and highlight
 			$parent.find('.correct').addClass('correctAnswer');
-
 			errada += 1;
 			var erro = errada - 1;
 			if (erro < errada && flag == 1) {
@@ -251,7 +262,7 @@ $(document).ready(function () {
 			}
 			if (erro < errada && flag == 10) {
 				je = "10";
-				$('#pag9').on('click', '#n10', function () {
+				$('.absolute').on('click', '#n10', function () {
 					descj = je;
 					alert(descj);
 					setTimeout(function () {
