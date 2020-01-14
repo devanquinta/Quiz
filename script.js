@@ -2,7 +2,7 @@ var $total = -1
 var pontos = -1
 var correta = 0;
 var errada = 0;
-var usuario = "0";
+var usuario = "";
 var cont = 1;
 var flag = 1;
 var pontos = 0;
@@ -94,7 +94,6 @@ $(document).ready(function () {
 				document.getElementById("pontos").style.display = 'block';
 				document.getElementById("pontos").innerHTML = "Você ganhou " + pontos + " pontos!"
 				playSound();
-				alert("Você ganhou " + pontos + " pontos!")
 			}
 			if (correta > certa && cont == 2) {
 				bc = '2, ';
@@ -102,7 +101,6 @@ $(document).ready(function () {
 				document.getElementById("pontos1").style.display = 'block';
 				document.getElementById("pontos1").innerHTML = "Você ganhou " + pontos + " pontos!"
 				playSound();
-				alert("Você ganhou " + pontos + " pontos!")
 			}
 			if (correta > certa && cont == 3) {
 				cc = '3, ';
@@ -110,7 +108,6 @@ $(document).ready(function () {
 				document.getElementById("pontos2").style.display = 'block';
 				document.getElementById("pontos2").innerHTML = "Você ganhou " + pontos + " pontos!"
 				playSound();
-				alert("Você ganhou " + pontos + " pontos!")
 			}
 			if (correta > certa && cont == 4) {
 				dc = '4, ';
@@ -118,7 +115,6 @@ $(document).ready(function () {
 				document.getElementById("pontos3").style.display = 'block';
 				document.getElementById("pontos3").innerHTML = "Você ganhou " + pontos + " pontos!"
 				playSound();
-				alert("Você ganhou " + pontos + " pontos!")
 			}
 			if (correta > certa && cont == 5) {
 				ec = '5, ';
@@ -126,7 +122,6 @@ $(document).ready(function () {
 				document.getElementById("pontos4").style.display = 'block';
 				document.getElementById("pontos4").innerHTML = "Você ganhou " + pontos + " pontos!"
 				playSound();
-				alert("Você ganhou " + pontos + " pontos!")
 			}
 			if (correta > certa && cont == 6) {
 				fc = '6, ';
@@ -134,7 +129,6 @@ $(document).ready(function () {
 				document.getElementById("pontos5").style.display = 'block';
 				document.getElementById("pontos5").innerHTML = "Você ganhou " + pontos + " pontos!"
 				playSound();
-				alert("Você ganhou " + pontos + " pontos!")
 			}
 			if (correta > certa && cont == 7) {
 				gc = '7, ';
@@ -142,7 +136,6 @@ $(document).ready(function () {
 				document.getElementById("pontos6").style.display = 'block';
 				document.getElementById("pontos6").innerHTML = "Você ganhou " + pontos + " pontos!"
 				playSound();
-				alert("Você ganhou " + pontos + " pontos!")
 			}
 			if (correta > certa && cont == 8) {
 				hc = '8, ';
@@ -150,7 +143,6 @@ $(document).ready(function () {
 				document.getElementById("pontos7").style.display = 'block';
 				document.getElementById("pontos7").innerHTML = "Você ganhou " + pontos + " pontos!"
 				playSound();
-				alert("Você ganhou " + pontos + " pontos!")
 			}
 			if (correta > certa && cont == 9) {
 				ic = '9, ';
@@ -158,7 +150,7 @@ $(document).ready(function () {
 				document.getElementById("pontos8").style.display = 'block';
 				document.getElementById("pontos8").innerHTML = "Você ganhou " + pontos + " pontos!"
 				playSound();
-				alert("Você ganhou " + pontos + " pontos!")
+		
 			}
 			if (correta > certa && cont == 10) {
 				jc = ' 10';
@@ -166,7 +158,6 @@ $(document).ready(function () {
 				document.getElementById("pontos9").style.display = 'block';
 				document.getElementById("pontos9").innerHTML = "Você ganhou " + pontos + " pontos!"
 				playSound();
-				alert("Você ganhou " + pontos + " pontos!")
 			}// final do if 
 
 			setTimeout(function () {
@@ -175,12 +166,8 @@ $(document).ready(function () {
 				div.animate({ width: '175px', opacity: '0.8' }, "slow");
 				div.animate({ height: '95px', opacity: '0.4' }, "slow");
 				div.animate({ width: '160px', opacity: '0.8' }, "slow");
-				$("body").css('opacity', '0.5');
 			}, 1200);
-			setTimeout(function () {
-				$("body").css('opacity', '0.8');
-			}, 3500);
-
+		
 
 			/********************************************************************************** */
 		} else {
@@ -274,9 +261,6 @@ $(document).ready(function () {
 				});
 			}
 		};// Final do else
-
-		desc = desca + "" + descb + "" + descc + "" + descd + "" + desce + "" + descf + "" + descg + "" + desch + "" + desci + "" + descj + "";
-		alert("desconhecida" + desc);
 	});//final da função perguntas certas e erradas
 
 
@@ -298,19 +282,6 @@ $(document).ready(function () {
 			$('#halfText').append('<p style="color: #00008B">Tente refazer os testes com mais calma.</p>');
 		}
 	};//Final da função result - resultado final 
-
-  /*/setTimeout(function () {
-			document.getElementById('pag9').style.display = 'none';
-			/*document.getElementById('final').style.display = 'block';
-		}, 100000);*/
-
-	/*setTimeout(function(){ 
-				var div = $("finalResult");
-				div.animate({height: '300px', opacity: '0.4'}, "slow");
-				div.animate({width: '300px', opacity: '0.8'}, "slow");
-				div.animate({height: '100px', opacity: '0.4'}, "slow");
-				div.animate({width: '100px', opacity: '0.8'}, "slow");
-	}, 30009);*/
 
 	//final score
 
@@ -341,12 +312,13 @@ $(document).ready(function () {
 			/*perguntasTotal = a + "-" + b + "-" + c + "-" + d + "-" + e + "-" + f + "-" + g + "-" + h + "-" + i + "-" + j + "";*/
 			totalCertas = ac + "" + bc + "" + cc + "" + dc + "" + ec + "" + fc + "" + gc + "" + hc + "" + ic + "" + jc + "";
 			totalErradas = ae + "" + be + "" + ce + "" + de + "" + ee + "" + fe + "" + ge + "" + he + "" + ie + "" + je + "";
+			desc = desca + "" + descb + "" + descc + "" + descd + "" + desce + "" + descf + "" + descg + "" + desch + "" + desci + "" + descj + "";
 			pontos = parseInt($totalScore) * 10;
-			usuario = "" + user + "";
+			alert( "teste usuario" + user);
+			usuario = "" +user+ "";
 		}//final da função email 
 		email();
 		desc = desca + descb + descc + descd + desce + descf + descg + desch + desci + descj + "";
-		alert("ultimo " + desc + "" + descj)
 		var templateParams = {
 			"user": usuario,
 			"TotalErrada": errada,
