@@ -18,7 +18,6 @@ var desca = ""; descb = ""; descc = ""; descd = ""; desce = ""; descf = ""; desc
 
 /* PARA ACERTAR O BUG DO BOTÃO É SÓ COLOCAR TUDO EM BUTTON
 
-
 /************************************************ */
 console.log($("[id*='ctl00_hnlPerfil']", window.parent.document).html());
 var user = $("[id*='ctl00_hnlPerfil']", window.parent.document).html();
@@ -32,15 +31,67 @@ function Flag() {
 	flag++;
 	return flag;
 }
+function Time1() {
+	setTimeout(function () {
+     document.getElementById('pag0').style.display = 'none';
+	}, 400);
+}
+function Time2() {
+	setTimeout(function () {
+     document.getElementById('pag1').style.display = 'none';
+	}, 400);
+}
+function Time3() {
+	setTimeout(function () {
+     document.getElementById('pag2').style.display = 'none';
+	}, 400);
+}
+function Time4() {
+	setTimeout(function () {
+     document.getElementById('pag3').style.display = 'none';
+	}, 400);
+}
+function Time5() {
+	setTimeout(function () {
+     document.getElementById('pag4').style.display = 'none';
+	}, 400);
+}
+function Time6() {
+	setTimeout(function () {
+     document.getElementById('pag5').style.display = 'none';
+	}, 400);
+}
+function Time7() {
+	setTimeout(function () {
+     document.getElementById('pag6').style.display = 'none';
+	}, 400);
+}
+function Time8() {
+	setTimeout(function () {
+     document.getElementById('pag7').style.display = 'none';
+	}, 400);
+}
+function Time9() {
+	setTimeout(function () {
+     document.getElementById('pag8').style.display = 'none';
+	}, 400);
+}
+
+
 $(document).ready(function () {
 	$('.btn3').click(function () {
-		document.getElementById('pagA').style.display = 'none';
-		document.getElementById('pag0').style.display = 'block';
+		setTimeout(function () {
+     	document.getElementById('pagA').style.display = 'none';
+			document.getElementById('pag0').style.display = 'block';
+	}, 400);
+	
 	});
 
 	$('.absolute').click(function () {
 		$("body").css({ "position": "absolute" });
 	});
+
+
 
 	//get total of questions
 	var $questionNumber = $('h2').length;
@@ -150,7 +201,6 @@ $(document).ready(function () {
 				document.getElementById("pontos8").style.display = 'block';
 				document.getElementById("pontos8").innerHTML = "Você ganhou " + pontos + " pontos!"
 				playSound();
-		
 			}
 			if (correta > certa && cont == 10) {
 				jc = ' 10';
@@ -167,7 +217,6 @@ $(document).ready(function () {
 				div.animate({ height: '95px', opacity: '0.4' }, "slow");
 				div.animate({ width: '160px', opacity: '0.8' }, "slow");
 			}, 1200);
-		
 
 			/********************************************************************************** */
 		} else {
@@ -263,8 +312,6 @@ $(document).ready(function () {
 		};// Final do else
 	});//final da função perguntas certas e erradas
 
-
-
 	//print Results
 	function printResult() {
 		var resultText = '<p style="color: #800000; font-size:larger;">';
@@ -307,15 +354,14 @@ $(document).ready(function () {
 		},
 			15000);*/
 
-
 		function email() {
 			/*perguntasTotal = a + "-" + b + "-" + c + "-" + d + "-" + e + "-" + f + "-" + g + "-" + h + "-" + i + "-" + j + "";*/
 			totalCertas = ac + "" + bc + "" + cc + "" + dc + "" + ec + "" + fc + "" + gc + "" + hc + "" + ic + "" + jc + "";
 			totalErradas = ae + "" + be + "" + ce + "" + de + "" + ee + "" + fe + "" + ge + "" + he + "" + ie + "" + je + "";
 			desc = desca + "" + descb + "" + descc + "" + descd + "" + desce + "" + descf + "" + descg + "" + desch + "" + desci + "" + descj + "";
 			pontos = parseInt($totalScore) * 10;
-			alert( "teste usuario" + user);
-			usuario = "" +user+ "";
+			alert("teste usuario" + user);
+			usuario = "" + user + "";
 		}//final da função email 
 		email();
 		desc = desca + descb + descc + descd + desce + descf + descg + desch + desci + descj + "";

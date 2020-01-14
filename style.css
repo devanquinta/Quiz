@@ -231,6 +231,28 @@ input.hide:checked ~ div.content {
     box-shadow: #1d1a1a;
 		background-image: linear-gradient(to bottom, #1aa6e2, #246ff1 130%); 
 }
+
+/***********************************************************************/
+#btnA, #btnE {
+    padding: 5px;
+    background-color: #06aff8;
+    margin-left: -3%;
+    width: 100px;
+    font-size: 14px;
+    box-shadow: #f2f2f2;
+		border-radius: 5px; 
+}
+#btnA, btnE:hover {
+    font-size: 14px;
+    background-color: #1aa6e2;
+    box-shadow: #1d1a1a;
+		background-image: linear-gradient(to bottom, #1aa6e2, #246ff1 130%); 
+}
+
+
+
+
+/***********************************************************************/
 #img1{/*Usina*/
   width: 650px;
   height: 350px;
